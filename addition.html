@@ -82,6 +82,25 @@
         .ii {
             width: 35px;
         }
+        #fl {
+            display: flex;
+        }
+        @media screen and (max-device-width: 800px) {
+            #nav a {
+                font-size: 40px;
+                padding: 10px;
+            }
+            #que {
+                font-size: 140px;
+            }
+            #a1 button {
+                font-size: 100px;
+                width: 80%;
+                margin-top: 50px;
+                height: 30%;
+                border-radius: 10px;
+            }
+        }
 
     </style>
     <html>
@@ -99,12 +118,14 @@
                 </b>
             </p>
             <p>
+                <div id="fl">
                 <button id="opt1">
 
                 </button>
                 <button id="opt2">
 
                 </button>
+                </div>
                 <br>
             </div>
             <div id="check">
@@ -135,11 +156,11 @@
         let c = document.querySelector(`#check`);
 
         let rnd1 = document.querySelector(`#rnd1`);
-        rnd1.textContent = Math.round(Math.random()*15+500);
+        rnd1.textContent = Math.round(Math.random()*15+5345);
         rnd1 = parseInt(rnd1.textContent);
 
         let rnd2 = document.querySelector(`#rnd2`);
-        rnd2.textContent = Math.round(Math.random()*14+500);
+        rnd2.textContent = Math.round(Math.random()*14+5345);
         rnd2 = parseInt(rnd2.textContent);
 
         let opt1 = document.querySelector(`#opt1`);
@@ -150,19 +171,19 @@
 
         const op1 = () => {
             const ans = rnd1+rnd2;
-            if (ans<550) {
+            if (ans<6000) {
                 opt1.textContent = ans;
             } else {
-                opt1.textContent = Math.round(Math.random()*500+ans);
+                opt1.textContent = Math.round(Math.random()*5345+ans);
             }
         };
 
         const op2 = () => {
             const ans = rnd1+rnd2;
-            if (ans>550) {
+            if (ans>6000) {
                 opt2.textContent = ans;
             } else {
-                opt2.textContent = Math.round(Math.random()*500+ans);
+                opt2.textContent = Math.round(Math.random()*5345+ans);
             }
         };
 
