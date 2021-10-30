@@ -1,0 +1,172 @@
+<html>
+    <head>
+        <title>
+            Add 
+        </title>
+        <script src="https://kit.fontawesome.com/e8e3ece33f.js" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;800&display=swap');
+        html {
+            scroll-behavior: smooth;
+            text-align: center;
+        }
+        * {
+            margin: 0%;
+        }
+        #a1 h1 {
+            margin-top: 300px;
+        }
+        #que {
+            font-family: 'Poppins', sans-serif;
+            font-size: 80px;
+        }
+        #a1 button {
+            color: white;
+            background: #6C63FF;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 40px;
+            width: 45%;
+            padding-top: 100px;
+            padding-bottom: 100PX;
+            margin-left: 25px;
+            margin-right: 25px;
+            transition: 0.2s;
+        }
+        #a1 button:hover {
+            background-color: #4D45C8;
+        }
+        #a1 button:active {
+            background-color: #201b5e;
+        }
+        #nav {
+            margin-right: 20px;
+            margin-left: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: left;
+            margin-left: 20px;
+        }
+        #nav a {
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            background: #6C63FF;
+            padding: 10px;
+            text-decoration: none;
+            margin-left: auto;
+            margin-right: 20px;
+            text-align: left;
+            border-radius: 2.5px;
+            transition: 0.5s;
+        }
+        #nav a:hover {
+            background-color: #4D45C8;
+        }
+        #check {
+            width: 100%;
+            margin-top: 60px;
+            height: 30px;
+        }
+        .correct {
+            color: #6DD144;
+            background: #6DD144;
+        }
+        .wrong {
+            color: red;
+            background: red;
+        }
+        .ii {
+            width: 35px;
+        }
+
+    </style>
+    <html>
+        <div id="a1">
+            <div id="nav">
+                <A href="./index.html" class="ii"><i class="fas fa-undo-alt"></i>  </A><a href="" class="ii"><i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+            <p id="que">
+                <b id="rnd1">
+
+                </b>
+                +
+                <b id="rnd2">
+
+                </b>
+            </p>
+            <p>
+                <button id="opt1">
+
+                </button>
+                <button id="opt2">
+
+                </button>
+                <br>
+            </div>
+            <div id="check">
+            </div>
+            </p>
+    </html>
+    <script>
+        const check1 = function atmpt1() {
+            const ans = rnd1+rnd2;
+            if (rnd1===ans) {
+                c.textContent = `correct`;
+                c.classList.add(`correct`);
+            } else {
+                c.textContent = `wrong`;
+                c.classList.add(`wrong`);
+            }
+        }
+        const check2 = function atmpt2() {
+            const ans = rnd1+rnd2;
+            if (rnd2=ans) {
+                c.textContent = `correct`;
+                c.classList.add(`correct`);
+            } else {
+                c.textContent = `wrong`;
+                c.classList.add(`wrong`);
+            }
+        }
+        let c = document.querySelector(`#check`);
+
+        let rnd1 = document.querySelector(`#rnd1`);
+        rnd1.textContent = Math.round(Math.random()*15+500);
+        rnd1 = parseInt(rnd1.textContent);
+
+        let rnd2 = document.querySelector(`#rnd2`);
+        rnd2.textContent = Math.round(Math.random()*14+500);
+        rnd2 = parseInt(rnd2.textContent);
+
+        let opt1 = document.querySelector(`#opt1`);
+        opt1.addEventListener(`click`, check1);
+
+        let opt2 = document.querySelector(`#opt2`);
+        opt2.addEventListener(`click`, check2);
+
+        const op1 = () => {
+            const ans = rnd1+rnd2;
+            if (ans<550) {
+                opt1.textContent = ans;
+            } else {
+                opt1.textContent = Math.round(Math.random()*500+ans);
+            }
+        };
+
+        const op2 = () => {
+            const ans = rnd1+rnd2;
+            if (ans>550) {
+                opt2.textContent = ans;
+            } else {
+                opt2.textContent = Math.round(Math.random()*500+ans);
+            }
+        };
+
+        console.log(op1());
+        console.log(op2());
+    </script>
+</html>
